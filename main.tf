@@ -1,8 +1,13 @@
 resource "aws_instance" "umesh-ec2" {
-  ami           = "ami-0c55b159cbfafe1f0"  # Linux 2 AMI in N.virgina
+  ami           = "ami-linux"  # Linux 2 AMI in N.virgina
   instance_type = var.instance_type
 
   tags = {
     Name = "Myec2"
   }
+}
+
+resource "aws_s3_bucket" "umesh-s3-9848" {
+  bucket = var.bucket_name
+  acl    = "private"
 }
